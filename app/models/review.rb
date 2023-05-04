@@ -3,5 +3,5 @@ class Review < ApplicationRecord
   validates :content, presence: true
   validates :rating, presence: true
   validates :rating, numericality: { only_integer: true }
-  validates :rating, inclusion: { in: %w[0 1 2 3 4 5]}
+  validates :rating, numericality: { in: 0..5 }
 end
